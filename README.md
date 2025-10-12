@@ -29,7 +29,8 @@
 2. Fraction f2 = new Fraction(-1, 4);
 3. Fraction f3 = new Fraction(3, -27);
 4. Fraction f4 = new Fraction(-2, -8);
-5. Fraction f5 = new Fraction(5,10).
+5. Fraction f5 = new Fraction(5,10);
+
 Вывод:
 1. f1 = 2/3
 2. f2 = -1/4
