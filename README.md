@@ -113,8 +113,17 @@
 Воспользуйтесь картой городов из задачи 1.3.3 и выведите маршрут из Города F в Город D.
 
 ### Алгоритм решения
-В классе Route объявлены поля startCity (CreateCities) - город начала маршрута, endCity (CreateCities) - город конца маршрута, citiesMap (Map<String, CreateCities>) - карта всех доступных городов, где ключ - название города, значение - объект CreateCities. Реализованы свойства: методы 
+В классе Route объявлены поля startCity (CreateCities) - город начала маршрута, endCity (CreateCities) - город конца маршрута, citiesMap (Map<String, CreateCities>) - карта всех доступных городов, где ключ - название города, значение - объект CreateCities. Реализованы свойства: геттеры getStartCity(), getEndCity() и сеттеры setStartCity(), setEndCity()
 #### Тестирование
+Созданы обекты:
+1. Route route1 = new Route(cityF, cityD, citiesMap);
+2. Route route2 = new Route(cityA, cityC, citiesMap);
+3. Route route3 = new Route(cityE, cityC, citiesMap);
+
+Вывод:
+1. Маршрут: F -> B -> A -> D
+2. Маршрут: A -> B -> C
+3. Маршрут: E -> F -> B -> A -> D -> C
 
 # Задание 3
 Наследование: extends, super, final, переопределение.
