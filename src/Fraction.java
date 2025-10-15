@@ -3,8 +3,7 @@ public class Fraction {
     private final int numerator;
     private final int denominator;
 
-    //Свойсва
-
+    //Свойства
     public int getNumerator() {
 
         return numerator;

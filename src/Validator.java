@@ -41,6 +41,12 @@ public class Validator {
         }
     }
 
+    public static void validateCity(CreateCities city) {
+        if (city == null) {
+            throw new IllegalArgumentException("Город не может быть null");
+        }
+    }
+
     public static void validateFractionIsNumber(FractionIsNumber fraction) {
         if (fraction == null){
             throw new IllegalArgumentException("Дробь не может быть null");
