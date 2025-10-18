@@ -167,6 +167,27 @@
 4. В комментариях кода показзаны запрещённые операции и методы создания дроби.
 
 #### Тестирование
+Созданы объекты:
+1. ForbiddenFraction f1 = ForbiddenFraction.create();
+2. ForbiddenFraction f2 = ForbiddenFraction.create(-1, 4);
+3. ForbiddenFraction f3 = ForbiddenFraction.create(3, -27);
+4. ForbiddenFraction f4 = ForbiddenFraction.create(-2, -8);
+5. ForbiddenFraction f5 = ForbiddenFraction.create(5,10);
+
+Вывод: 
+1. f1 = 2/3
+2. f2 = -1/4
+3. f3 = -1/9
+4. f4 = 1/4
+5. f5 = 1/2
+6. 2/3 + 1/2 = 7/6
+7. 1/4 + 2 = 9/4
+8. -1/9 - 1/4 = -13/36
+9. -1/9 - 7 = -64/9
+10. 1/2 * 1/2 = -1/8
+11. 1/4 * 16 = 4/1
+12. 1/2 / 2/3 = 3/4
+13. -1/9 / 2 = -1/18
 
 # Задание 4
 Создание иерархий: abstract.
@@ -203,6 +224,23 @@ Number. Данный класс входит в стандартную реда�
 3. Преобразование типов - вызов методов intValue(), longValue(), floatValue(), doubleValue().
 
 #### Тестирование
+Созданы обекты:
+1. FractionIsNumber f1 = new FractionIsNumber();
+2. FractionIsNumber f2 = new FractionIsNumber(-200, -102);
+3. FractionIsNumber f3 = new FractionIsNumber(-1, 4);
+4. FractionIsNumber f4 = new FractionIsNumber(60, 8);
+5. FractionIsNumber f5 = new FractionIsNumber(25, -10);
+Вывод:
+1. f1 = 2/3
+2. f2 = 100/51
+3. f3 = -1/4
+4. f4 = 15/2
+5. f5 = -5/2
+6. Преобразование типов:
+7. f2: 1.9607843137254901 (doubleValue())
+8. f3: -0.25 (floatValue())
+9. f4: 7 (longValue())
+10. f5: -2 (intValue())
 
 # Задание 5
 Полиморфизм: виртуальный вызов метода, interface, implements.
