@@ -289,20 +289,59 @@ public class Main {
                     System.out.println("f4 = " + f4);
                     System.out.println("f5 = " + f5);
 
-                    System.out.println("f5: " + f5.intValue() + " (intValue())");
-                    System.out.println("f4: " + f4.longValue() + " (longValue())");
-                    System.out.println("f3: " + f3.floatValue() + " (floatValue())");
+                    System.out.println("Преобразование типов:");
                     System.out.println("f2: " + f2.doubleValue() + " (doubleValue())");
+                    System.out.println("f3: " + f3.floatValue() + " (floatValue())");
+                    System.out.println("f4: " + f4.longValue() + " (longValue())");
+                    System.out.println("f5: " + f5.intValue() + " (intValue())");
                     break;
                 }
 
                 case 6: {
                     //5.1
+                    double sum1 = Addition.sum(
+                            Addition.createInteger(2),
+                            Addition.createFraction(3, 5),
+                            Addition.createDouble(2.3));
+                    double sum2 = Addition.sum(
+                            Addition.createDouble(3.6),
+                            Addition.createFraction(49, 12),
+                            Addition.createInteger(3),
+                            Addition.createFraction(3, 2));
+                    double sum3 = Addition.sum(
+                            Addition.createFraction(1, 3),
+                            Addition.createInteger(1));
+
+                    System.out.println("2 + 3/5 + 2.3 = " + sum1);
+                    System.out.println("3.6 + 49/12 + 3 + 3/2 = " + sum2);
+                    System.out.println("1/3 + 1 = " + sum3);
                     break;
                 }
 
                 case 7: {
                     //6.5
+                    Map<String, Integer> ways = new HashMap<>();
+                    ways.put("B", 5);
+                    ways.put("C", 3);
+
+                    ComparisonCities A1 = new ComparisonCities("A1", ways);
+                    TwoWayRoad A2 = new TwoWayRoad("A2", ways);
+                    Roads A3 = new Roads("A3", ways);
+
+                    System.out.println("A1 (ComparisonCities) equals A2 (TwoWayRoad): " + A1.equals(A2));
+                    System.out.println("A1 (ComparisonCities) equals A3 (Roads): " + A1.equals(A3));
+                    System.out.println("A1.hashCode(): " + A1.hashCode());
+                    System.out.println("A2.hashCode(): " + A2.hashCode());
+                    System.out.println("A3.hashCode(): " + A3.hashCode());
+
+                    A2.addTwoWayRoad(new TwoWayRoad("D"), 7);
+                    A3.addWay("D", 7);
+
+                    System.out.println("A1 (ComparisonCities) equals A2 (TwoWayRoad): " + A1.equals(A2));
+                    System.out.println("A1 (ComparisonCities) equals A3 (Roads): " + A1.equals(A3));
+                    System.out.println("A1.hashCode(): " + A1.hashCode());
+                    System.out.println("A2.hashCode(): " + A2.hashCode());
+                    System.out.println("A3.hashCode(): " + A3.hashCode());
                     break;
                 }
 

@@ -2,7 +2,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-public class Roads {
+public class ComparisonCities {
     //Поля
     private String title;
     private Map<String, Integer> ways;
@@ -23,48 +23,39 @@ public class Roads {
 
     public void setWays(Map<String, Integer> ways) {
         Validator.validateWays(ways);
-        if (ways.containsKey(this.title)) {
-            throw new IllegalArgumentException("Нельзя создать дорогу в тот же город.");
-        }
-        if (ways.size() != new HashMap<>(ways).size()) {
-            throw new IllegalArgumentException("Набор путей содержит дублирующиеся города.");
-        }
         this.ways = ways;
     }
 
     //Конструкторы
     //По умолчанию
-    public Roads(){
+    public ComparisonCities(){
         this.title = "A";
         this.ways = new HashMap<>();
     }
 
     //С параметрами
     //Создание города
-    public Roads(String title){
+    public ComparisonCities(String title){
         Validator.validateTitle(title);
         this.title = title;
         this.ways = new HashMap<>();
     }
 
     //Создание города с готовыми путями
-    public Roads(String title, Map<String, Integer> ways) {
+    public ComparisonCities(String title, Map<String, Integer> ways) {
         Validator.validateTitle(title);
         Validator.validateWays(ways);
         if (ways.containsKey(title)) {
             throw new IllegalArgumentException("Нельзя создать дорогу в тот же город.");
-        }
-        if (ways.size() != new HashMap<>(ways).size()) {
-            throw new IllegalArgumentException("Набор путей содержит дублирующиеся города.");
         }
         this.title = title;
         this.ways = new HashMap<>(ways);
     }
 
     //Копирования
-    public Roads(Roads roads){
-        this.title = roads.title;
-        this.ways = new HashMap<>(roads.ways);
+    public ComparisonCities(ComparisonCities city){
+        this.title = city.title;
+        this.ways = new HashMap<>(city.ways);
     }
 
     //Добавление пути
@@ -101,10 +92,26 @@ public class Roads {
         return result;
     }
 
-    // Определение хэш-кода для задачи 6.5
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) {
+            return true;
+        }
+        Map<String, Integer> newWays;
+        if (object instanceof ComparisonCities) {
+            newWays = ((ComparisonCities) object).ways;
+        } else if (object instanceof TwoWayRoad){
+            newWays = ((TwoWayRoad) object).getWays();
+        } else if (object instanceof Roads) {
+            newWays = ((Roads) object).getWays();
+        } else {
+            return false;
+        }
+        return Objects.equals(this.ways, newWays);
+    }
+
     @Override
     public int hashCode() {
-        return Objects.hash(getWays());
+        return Objects.hash(ways);
     }
 }
-

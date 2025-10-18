@@ -47,21 +47,25 @@ public class FractionIsNumber extends Number {
 
     @Override
     public int intValue() {
+        Validator.validateDenominator(denominator);
         return numerator / denominator;
     }
 
     @Override
     public long longValue() {
+        Validator.validateDenominator(denominator);
         return (long) numerator / (long) denominator;
     }
 
     @Override
     public double doubleValue() {
+        Validator.validateDenominator(denominator);
         return (double) numerator / (double) denominator;
     }
 
     @Override
     public float floatValue() {
+        Validator.validateDenominator(denominator);
         return (float) numerator / (float) denominator;
     }
 
